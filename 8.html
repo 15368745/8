@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global TechSolutions - Digital Innovation & Contact</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .main-content {
+            flex: 1;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .header-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .header-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+        }
+        
+        .header-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #bdc3c7;
+        }
+        
+        .btn-custom {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: none;
+        }
+        
+        .btn-custom:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            padding: 30px;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .service-description {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ddd, transparent);
+            margin: 40px 0;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .project-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .project-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .project-description {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            line-height: 1.8;
+        }
+        
+        .project-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-top: 30px;
+        }
+        
+        /* New Modules Section */
+        .new-modules {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .module-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-left: 5px solid #3498db;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .module-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .module-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .module-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .module-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .highlight {
+            font-weight: 700;
+            color: #3498db;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+        }
+        
+        .contact-title {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .contact-description {
+            font-size: 1.2rem;
+            color: #bdc3c7;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #2980b9;
+        }
+        
+        /* Enhanced Contact Section */
+        .enhanced-contact {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .enhanced-contact-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        
+        .enhanced-contact-form {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-item i {
+            margin-right: 12px;
+            color: #3498db;
+            font-size: 20px;
+            margin-top: 3px;
+        }
+        
+        .info-content {
+            flex: 1;
+        }
+        
+        .map-container {
+            height: 400px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .collaboration {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .search-box {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .search-box input {
+            flex: 1;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        
+        .search-box button {
+            width: auto;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding: 12px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        /* Bootstrap Section */
+        .bootstrap-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .bootstrap-card {
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .bootstrap-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a2530;
+            color: white;
+            padding: 50px 0 20px;
+            flex-shrink: 0;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        
+        .footer-heading {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2c3e50;
+            color: #bdc3c7;
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .services, .projects, .new-modules, .contact, .enhanced-contact, .bootstrap-section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-title, .module-title {
+                font-size: 1.6rem;
+            }
+            
+            .services, .projects, .new-modules, .contact, .enhanced-contact, .bootstrap-section {
+                padding: 40px 0;
+            }
+            
+            .service-card, .module-card {
+                padding: 20px;
+            }
+            
+            .header-description, .service-description, .project-description, .contact-description {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-title {
+                font-size: 1.8rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-title, .module-title {
+                font-size: 1.4rem;
+            }
+            
+            .btn-custom {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+            .services, .projects, .new-modules, .contact, .enhanced-contact, .bootstrap-section {
+                padding: 30px 0;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            .header-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .service-title, .module-title {
+                font-size: 1.2rem;
+            }
+            
+            .service-card, .module-card, .contact-form, .enhanced-contact-info, .enhanced-contact-form {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <!-- Header Section -->
+        <header>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <!-- Navigation -->
+                        <div class="d-flex justify-content-between mb-4">
+                            <a href="#" class="text-decoration-none text-light fw-bold fs-5">Home</a>
+                            <a href="#" class="text-decoration-none" style="color: #3498db; font-weight: 600; font-size: 1.1rem;">Contact</a>
+                        </div>
+                        
+                        <!-- Header Content -->
+                        <h1 class="header-title">Global Automation Solutions for Your Business</h1>
+                        <p class="header-subtitle">Transform your global workflow with our innovative solutions</p>
+                        <p class="header-description">
+                            Global ipsum dolor sit amet, consectetur adipiscing elit. Faucibus tristique vulputate ultrices ut mauris tellus at. Posuere sollicitudin odio tellus elit.
+                        </p>
+                        <a href="#" class="btn-custom">See Our Global Projects <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title">Global Solutions for Client Growth in Digital Era</h2>
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="service-title">Global Business Recognition</h3>
+                            <p class="service-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <a href="#" class="btn-custom">Learn more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 class="service-title">Global Technology Integration</h3>
+                            <p class="service-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <a href="#" class="btn-custom">Learn more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="service-title">Global Digital Products</h3>
+                            <p class="service-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <a href="#" class="btn-custom">Learn more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <div class="container">
+                <div class="project-content">
+                    <h2 class="project-title">Our Global Projects</h2>
+                    <p class="project-description">
+                        Global ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
+                
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="Global Smart Home Installation" class="project-image">
+            </div>
+        </section>
+
+        <!-- New Modules Section -->
+        <section class="new-modules">
+            <div class="container">
+                <h2 class="section-title">Global Sparklite App Features</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="module-card">
+                            <h3 class="module-title">GLOBAL SLOP WOMEN</h3>
+                            <ul class="module-list">
+                                <li><span class="highlight">GLOBAL SERUMEN</span></li>
+                                <li><span class="highlight">Global Hauptmensch</span></li>
+                                <li>1,5 m²</li>
+                                <li>2,0 m²</li>
+                                <li>3,0 m²</li>
+                                <li>4,0 m²</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="module-card">
+                            <h3 class="module-title">Global Car-Rapetition App</h3>
+                            <ul class="module-list">
+                                <li><span class="highlight">GLOBAL RATMÄSSE</span></li>
+                                <li><span class="highlight">GLOBAL KETCELNE</span></li>
+                                <li><span class="highlight">GLOBAL BESTIMMEN</span></li>
+                                <li><span class="highlight">235 KM</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-info">
+                            <h2 class="contact-title">Interested in Global Partnership?</h2>
+                            <p class="contact-description">
+                                Global ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="contact-form">
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" class="form-control" placeholder="Your Name">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Your Email">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea id="message" class="form-control" placeholder="Your Message"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Contact Section -->
+        <section class="enhanced-contact">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <h1>Global Contact Us</h1>
+                        <p>Global ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="enhanced-contact-info">
+                            <h2>GLOBAL ADDRESS</h2>
+                            <p>Global convallis placerat at sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            
+                            <div class="divider"></div>
+                            
+                            <h3>GLOBAL PHONE</h3>
+                            <ul class="list-unstyled">
+                                <li class="info-item">
+                                    <i class="fas fa-phone"></i>
+                                    <div class="info-content">7:49 E-2334-3331</div>
+                                </li>
+                                <li class="info-item">
+                                    <i class="fas fa-phone"></i>
+                                    <div class="info-content">7:49 F-0000-3354</div>
+                                </li>
+                            </ul>
+                            
+                            <h3>GLOBAL ONLINE SERVICE</h3>
+                            <ul class="list-unstyled">
+                                <li class="info-item">
+                                    <i class="fas fa-globe"></i>
+                                    <div class="info-content">www.globalafac.com</div>
+                                </li>
+                                <li class="info-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="info-content">info@www.globalafac.com</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="enhanced-contact-form">
+                            <h2>GLOBAL MESSAGE</h2>
+                            
+                            <div class="form-group">
+                                <label for="name2">Full Name</label>
+                                <input type="text" id="name2" class="form-control" placeholder="Your Name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email2">Email</label>
+                                <input type="email" id="email2" class="form-control" placeholder="Your Email">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message2">Message</label>
+                                <textarea id="message2" class="form-control" placeholder="Your Message"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="gabinet">GLOBAL GABINET</label>
+                                <input type="text" id="gabinet" class="form-control">
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Send Global Message</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map Section -->
+                <div class="map-container mt-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2>Our Global Locations</h2>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="map-search" class="form-control" placeholder="Search for a global location...">
+                        <button id="search-btn" class="btn btn-primary"><i class="fas fa-search"></i> Global Search</button>
+                    </div>
+                    <iframe class="map" src="https://yandex.ru/map-widget/v1/-/CCUaKQ1hDB" frameborder="0"></iframe>
+                </div>
+                
+                <div class="collaboration mt-5">
+                    <h2>Interested in Global Teamwork?</h2>
+                    <p>Global learn about all areas, commitment and planning skills, and do customized through subsidiaries to labour on outdoor ranges through 10 visits and multiple visitors.</p>
+                    
+                    <div class="divider"></div>
+                    
+                    <h3>Global Day</h3>
+                    <ul class="list-unstyled">
+                        <li class="info-item">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <div class="info-content">
+                                <strong>Global Loans: please adopt all areas,</strong><br>convenient and delivery arts.
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="info-content">1. 19-25-23 13-4251</div>
+                        </li>
+                        <li class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info-content">2. info@www.globalafac.com</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bootstrap Section -->
+        <section class="bootstrap-section">
+            <div class="container">
+                <h2 class="section-title">Global Bootstrap Components</h2>
+                <p class="text-center mb-5">This section demonstrates the use of Bootstrap components for creating global responsive layouts</p>
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card bootstrap-card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Global Responsive Design</h5>
+                                <p class="card-text">Our global layouts adapt to any screen size, from mobile to desktop.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card bootstrap-card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
+                                <h5 class="card-title">Global Fast Performance</h5>
+                                <p class="card-text">Optimized global code and assets ensure fast loading times.</p>
+                                <a href="#" class="btn btn-warning text-white">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card bootstrap-card shadow">
+                            <div class="card-body text-center">
+                                <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">Global Secure & Reliable</h5>
+                                <p class="card-text">We prioritize global security and reliability in all our solutions.</p>
+                                <a href="#" class="btn btn-success">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bootstrap Carousel -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div id="bootstrapCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#bootstrapCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#bootstrapCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#bootstrapCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner rounded">
+                                <div class="carousel-item active">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="d-block w-100" alt="Global Digital Innovation">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Global Digital Innovation</h5>
+                                        <p>Transforming global businesses with cutting-edge technology solutions.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="d-block w-100" alt="Global Team Collaboration">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Global Team Collaboration</h5>
+                                        <p>Working together globally to deliver exceptional results for our clients.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Global Future Technology">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Global Future Technology</h5>
+                                        <p>Building global solutions that will shape the future of digital experiences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#bootstrapCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#bootstrapCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">Global TechSolutions</div>
+                    <p>Global ipsum dolor sit amet, consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h3 class="footer-heading">Global Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Global Home</a></li>
+                        <li><a href="#">Global Services</a></li>
+                        <li><a href="#">Global Projects</a></li>
+                        <li><a href="#">Global About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h3 class="footer-heading">Global Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +62-812-7313-4321</li>
+                        <li><i class="fas fa-envelope"></i> info@www.globalafac.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Global Tech Street, Digital City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Global TechSolutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Simple form validation for the first form
+        document.querySelector('.contact-form button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            alert('Thank you for your global message! We will get back to you soon.');
+            document.querySelector('.contact-form form').reset();
+        });
+        
+        // Simple form validation for the second form
+        document.querySelector('.enhanced-contact-form button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name2').value;
+            const email = document.getElementById('email2').value;
+            const message = document.getElementById('message2').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            alert('Thank you for your global message! We will get back to you soon.');
+            document.querySelector('.enhanced-contact-form form').reset();
+        });
+        
+        // Map search functionality
+        document.getElementById('search-btn').addEventListener('click', function() {
+            const searchQuery = document.getElementById('map-search').value;
+            if (searchQuery) {
+                alert(`Searching for global location: ${searchQuery}. This would update the map in a real implementation.`);
+                // In a real implementation, you would update the iframe src here
+            }
+        });
+        
+        // Allow pressing Enter to search
+        document.getElementById('map-search').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('search-btn').click();
+            }
+        });
+    </script>
+</body>
+</html>
